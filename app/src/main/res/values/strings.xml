@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Metronome</string>
+    <string name="channel_name">Metronome</string>
+    <string name="channel_description">A description</string>
+    <string name="common_stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="stop">STOP</string>
+</resources>
