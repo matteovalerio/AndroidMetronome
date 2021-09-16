@@ -34,8 +34,9 @@ class BackgroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         // start service
         // send broadcast message
-        Log.i("Metronome", "Service started")
-        metronome.launch(60)
+        val tempo = intent?.getLongExtra("tempo", 60L)
+        Log.i("Metronome", "Service started with tempo $tempo")
+        metronome.start(tempo)
         return START_STICKY
     }
 

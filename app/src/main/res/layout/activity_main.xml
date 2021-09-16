@@ -2,31 +2,84 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <Button
-       android:id="@+id/start_metronome"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/start"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintLeft_toLeftOf="parent"
-       app:layout_constraintRight_toRightOf="parent"
-       android:backgroundTint="@color/Green"
-       />
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/imageDimen"
+        android:padding="@dimen/paddingTitle"
+        android:src="@drawable/metronome"
+        app:layout_constraintBottom_toTopOf="@id/title_constraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_constraint"
+        style="@style/BoxStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/titleBox"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintBottom_toTopOf="@id/tempo_picker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:padding="@dimen/paddingTitle"
+            android:text="@string/app_name"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/start_metronome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_shape"
+        android:backgroundTint="@color/black"
+        android:fontFamily="casual"
+        android:text="@string/start"
+        android:textColor="#00695C"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_picker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tempo_picker"
+        app:layout_constraintTop_toTopOf="@id/tempo_picker" />
+
+    <NumberPicker
+        android:id="@+id/tempo_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/paddingTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_constraint" />
+
     <Button
         android:id="@+id/stop_metronome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
+        android:background="@drawable/rounded_shape"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="add"
+        android:fontFamily="casual"
+        android:enabled="false"
         android:text="@string/stop"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_picker"
+        app:layout_constraintLeft_toRightOf="@id/tempo_picker"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/start_metronome"
-        />
+        app:layout_constraintTop_toTopOf="@id/tempo_picker" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

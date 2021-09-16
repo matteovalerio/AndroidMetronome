@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingTitle">10dp</dimen>
+    <dimen name="titleBox">80dp</dimen>
+    <dimen name="imageDimen">180dp</dimen>
+</resources>
